@@ -2,7 +2,7 @@
 
 ---
 
-## 1️⃣ 회원 요구사항과 설계
+## 1. 회원 요구사항과 설계
 
 ### 1) 요구사항
 
@@ -13,52 +13,131 @@
 ### 2) 설계
 
 **회원 도메인 협력 관계**
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33f55985-5303-4c8d-ab58-48833f02764f/도메인.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33f55985-5303-4c8d-ab58-48833f02764f/도메인.png)
+![회원 도메인](https://user-images.githubusercontent.com/17094674/126903205-2e1a270a-2953-4176-a102-72ad359c3d01.PNG)
 
 **회원 클래스 다이어그램**
 
 클래스 다이어그램은 모델링 된 시스템 구조를 보여주기 위한 정적 다이어그램 유형이다. 클래스 다이어그램에서 어떤 구현체가 동작할 지는 알 수 없다
+![회원클래스](https://user-images.githubusercontent.com/17094674/126903229-4922c8f5-2c79-40ca-af3c-4adc2cb43e62.PNG)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/366e595f-5620-465e-9f47-8b8fe0f54b1d/회원클래스.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/366e595f-5620-465e-9f47-8b8fe0f54b1d/회원클래스.png)
+
 
 **회원 객체 다이어그램**
 
 객체 다이어그램은 특정 순간에 객체와 객체 간의 관계를 나타낸다. 클라이언트가 사용하는 구현체를 알 수 있다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9316ca2-2496-434e-8da3-024506f69e8b/객체_다이어그램.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9316ca2-2496-434e-8da3-024506f69e8b/객체_다이어그램.png)
+![객체 다이어그램](https://user-images.githubusercontent.com/17094674/126903266-c815a1ae-d864-43f9-a3d5-c06224c7dc33.PNG)
 
-## 2️⃣ 주문 요구사항과 설계
+## 2. 주문과 할인정책 요구사항과 설계
 
-### ⭐ 주문과 할인 정책
+### 1) 요구사항
 
 - 상품 주문 기능이 있다.
 - 회원 등급에 따라 할인 정책을 적용할 수 있다.
 - VIP 등급은 1000원을 할인해주는 고정 금액 할인을 적용. **( 추후에 변경 될 수 있음 )**
 - 할인 정책은 **변경 가능성이 높다.** 회사의 기본 할인 정책을 정하지 못했고, 오픈 직전까지 고민을 미루고 싶다. 최악의 경우 할인을 적용하지 않을 수 있다.
 
-### ⭐ 설계
+### 2) 설계
 
 **주문 도메인 협력 관계**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/833df191-b1c9-4062-9327-8d3ae4842615/주문-도메인.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/833df191-b1c9-4062-9327-8d3ae4842615/주문-도메인.png)
+![주문-도메인](https://user-images.githubusercontent.com/17094674/126903312-6a85f2e7-a7bc-463c-b747-859b30d60535.PNG)
 
 1. **주문 생성** : 클라이언트는 주문 서비스에 주문 생성을 요청한다.
 2. **회원 조회** : 할인을 위해서는 회원 등급이 필요하다. 그래서 주문 서비스는 회원 저장소에서 회원을 조회한다.
 3. **할인 적용** : 주문 서비스는 회원 등급에 따른 할인 여부를 할인 정책에 위임한다.
 4. **주문 결과 반환** : 주문 서비스는 할인 결과를 포함한 주문 결과를 반환한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9a0abe5-76fc-4500-8fd2-985d49523448/주문도메인전체.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9a0abe5-76fc-4500-8fd2-985d49523448/주문도메인전체.png)
+![주문도메인전체](https://user-images.githubusercontent.com/17094674/126903342-dea824ea-1bd2-4776-b6f2-742f291bbfe0.PNG)
 
 **역할(인터페이스)과 구현을 분리**해서 자유롭게 구현 객체를 조립할 수 있게 설계했다. 덕분에 회원 저장소는 물론이고, 할인 정책도 유연하게 변경할 수 있다
 
 **주문 도메인 클래스 다이어 그램**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/805b5e3f-dea4-4f7c-9318-82f12d58187b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/805b5e3f-dea4-4f7c-9318-82f12d58187b/Untitled.png)
+![주문 클래스 다이어그램](https://user-images.githubusercontent.com/17094674/126903354-73b4e9a8-89ff-4c33-94e3-a4fd3354e89a.PNG)
 
 # Q&A
 
 ---
+
+### Q : 코딩 전 설계도를 가지고 설명해주시는 부분에서 문뜩 궁금한 것이 있어 질문 드립니다. 실무에서도 명세서 뿐만 아니라 도메인 협력 관계라던지 클래스 다이어그램을 그려 개발자들이 공유하면서 개발을 진행하나요?
+
+A: 개발을 여러명이서 함께 진행하면 요구사항이 설계에 잘 반영되었는지 서로 합의하는 과정이 매우 중요합니다.
+
+이때 도메인 협력 관계나 클래스 다이어그램등을 사용합니다. 필요한 경우 기획자도 함께 도메인 협력 관계를 보고 서로 피드백합니다.
+
+### Q: 실무에서 프로젝트 구현시 보통 폴더 구조를 어떤식으로 하시나요?
+
+현업에서 하나의 서비스 인터페이스에 대해 두 개 이상의  서비스 구현체를 만드는 경우가 있나요? 있다면 어떤 예시가 있을까요?
+
+A : 예를들어서 블로그 프로젝트가 정말 너무 작아서 단순하게 API 하나를 처리하면 끝난다고 하면, 그냥 패키지 하나에 다 몰아 넣고, 최대한 단순하게 처리하는 것이 좋다 생각합니다.
+
+project
+
+그런데 프로젝트에 요구사항이 추가되면서 기능이 증가하면 이제 컨트롤러, dto, entity, 비즈니스로직을 처리하는 serivce 등으로 패키지를 분할하는게 의미를 가지겠지요.
+
+project
+
+- controller
+- dto
+- entity
+- serivce
+
+여기서 프로젝트가 정말 더 커져서 여러 도메인이 추가되면 도메인 단위로 상위 패키지 개념을 더 추가할 수 있습니다.
+
+예를 들어서 단순히 블로그 API 만 제공하다가, 회원 기능이 추가되면 다음과 같이 될 수 있겠지요.
+
+project
+
+- blog
+
+- controller
+
+- dto
+
+- entity
+
+- service
+
+- member
+
+- controller
+
+- dto
+
+- entity
+
+- service
+
+그런데 이렇게 구성해보니까, 블로그 컨트롤러에서 회원과 관련된 서비스를 자주 사용합니다. 엔티티들도 서로 연관관계가 생깁니다. 그래서 다음과 같은 구조로 변경합니다.
+
+project
+
+- controller
+
+- blog
+
+- member
+
+- service
+
+- blog
+
+- member
+
+- entity
+
+- blog
+
+- member
+
+여기서 더 나아가면 패키지 구조를 넘어서 멀티모듈 프로젝트로 가면서 프로젝트 자체를 여러개로 구성할 수도 있습니다.
+
+제가 이 과정을 통해서 말씀드리고 싶은 진짜 핵심은!
+
+**프로젝트가 성장함에 따라 프로젝트 구조도 현재 상황에 맞추어 성장하고 변경할 수 있어야 합니다.**
+
+결국 이 부분은 진지한 고민과 학습 그리고 다양한 경험을 통해서 길러질 수 있는 아키텍트의 중요한 기본기라 생각합니다.
 
 ### Q : 저장소는 DIP를 이용해 손쉬운 교체를 하기 위함은 충분히 이해가 됐습니다. 하지만 현재 교체 가능성이 없는 Service클래스를 추상화하고 구현하는 이유가 있을까요? 어떤 기준으로 추상화하고 구현하시는지 궁금합니다.
 
@@ -84,6 +163,7 @@ A: 실무에서도 대부분의 경우 서비스 인터페이스의 구현체는
 관련해서는 조금 뒤에 의존관계 자동 주입 -> [조회한 빈이 모두 필요할 때, List, Map](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/lecture/55380?tab=curriculum)에서 예시를 설명드립니다^^
 
 추가로 다음 글도 읽어보시면 도움이 되실꺼에요^^ [https://www.inflearn.com/questions/69278](https://www.inflearn.com/questions/69278)
+
 
 # 그외
 
