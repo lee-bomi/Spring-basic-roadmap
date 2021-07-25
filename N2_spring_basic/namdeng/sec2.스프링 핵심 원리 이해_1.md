@@ -2,7 +2,7 @@
 
 ---
 
-## 1️⃣ 회원 요구사항과 설계
+## 1. 회원 요구사항과 설계
 
 ### 1) 요구사항
 
@@ -13,48 +13,48 @@
 ### 2) 설계
 
 **회원 도메인 협력 관계**
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33f55985-5303-4c8d-ab58-48833f02764f/도메인.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33f55985-5303-4c8d-ab58-48833f02764f/도메인.png)
+![회원 도메인](https://user-images.githubusercontent.com/17094674/126903205-2e1a270a-2953-4176-a102-72ad359c3d01.PNG)
 
 **회원 클래스 다이어그램**
 
 클래스 다이어그램은 모델링 된 시스템 구조를 보여주기 위한 정적 다이어그램 유형이다. 클래스 다이어그램에서 어떤 구현체가 동작할 지는 알 수 없다
+![회원클래스](https://user-images.githubusercontent.com/17094674/126903229-4922c8f5-2c79-40ca-af3c-4adc2cb43e62.PNG)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/366e595f-5620-465e-9f47-8b8fe0f54b1d/회원클래스.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/366e595f-5620-465e-9f47-8b8fe0f54b1d/회원클래스.png)
+
 
 **회원 객체 다이어그램**
 
 객체 다이어그램은 특정 순간에 객체와 객체 간의 관계를 나타낸다. 클라이언트가 사용하는 구현체를 알 수 있다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9316ca2-2496-434e-8da3-024506f69e8b/객체_다이어그램.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9316ca2-2496-434e-8da3-024506f69e8b/객체_다이어그램.png)
+![객체 다이어그램](https://user-images.githubusercontent.com/17094674/126903266-c815a1ae-d864-43f9-a3d5-c06224c7dc33.PNG)
 
-## 2️⃣ 주문 요구사항과 설계
+## 2. 주문과 할인정책 요구사항과 설계
 
-### ⭐ 주문과 할인 정책
+### 1) 요구사항
 
 - 상품 주문 기능이 있다.
 - 회원 등급에 따라 할인 정책을 적용할 수 있다.
 - VIP 등급은 1000원을 할인해주는 고정 금액 할인을 적용. **( 추후에 변경 될 수 있음 )**
 - 할인 정책은 **변경 가능성이 높다.** 회사의 기본 할인 정책을 정하지 못했고, 오픈 직전까지 고민을 미루고 싶다. 최악의 경우 할인을 적용하지 않을 수 있다.
 
-### ⭐ 설계
+### 2) 설계
 
 **주문 도메인 협력 관계**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/833df191-b1c9-4062-9327-8d3ae4842615/주문-도메인.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/833df191-b1c9-4062-9327-8d3ae4842615/주문-도메인.png)
+![주문-도메인](https://user-images.githubusercontent.com/17094674/126903312-6a85f2e7-a7bc-463c-b747-859b30d60535.PNG)
 
 1. **주문 생성** : 클라이언트는 주문 서비스에 주문 생성을 요청한다.
 2. **회원 조회** : 할인을 위해서는 회원 등급이 필요하다. 그래서 주문 서비스는 회원 저장소에서 회원을 조회한다.
 3. **할인 적용** : 주문 서비스는 회원 등급에 따른 할인 여부를 할인 정책에 위임한다.
 4. **주문 결과 반환** : 주문 서비스는 할인 결과를 포함한 주문 결과를 반환한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9a0abe5-76fc-4500-8fd2-985d49523448/주문도메인전체.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9a0abe5-76fc-4500-8fd2-985d49523448/주문도메인전체.png)
+![주문도메인전체](https://user-images.githubusercontent.com/17094674/126903342-dea824ea-1bd2-4776-b6f2-742f291bbfe0.PNG)
 
 **역할(인터페이스)과 구현을 분리**해서 자유롭게 구현 객체를 조립할 수 있게 설계했다. 덕분에 회원 저장소는 물론이고, 할인 정책도 유연하게 변경할 수 있다
 
 **주문 도메인 클래스 다이어 그램**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/805b5e3f-dea4-4f7c-9318-82f12d58187b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/805b5e3f-dea4-4f7c-9318-82f12d58187b/Untitled.png)
+![주문 클래스 다이어그램](https://user-images.githubusercontent.com/17094674/126903354-73b4e9a8-89ff-4c33-94e3-a4fd3354e89a.PNG)
 
 # Q&A
 
