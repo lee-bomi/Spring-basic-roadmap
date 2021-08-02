@@ -215,6 +215,8 @@ public class AppConfig {
   - `MemberServiceImpl` -> `MemoryMemberRepository` 
   - `OrderServiceImpl` -> `MemoryMemberRepository` , `FixDiscountPolicy` 
 
+
+
 #### MemberServiceImpl - 생성자 주입
 
 ~~~java
@@ -266,6 +268,8 @@ public class MemberServiceImpl implements MemberService {
 
 - `appConfig` 객체는 `memoryMemberRepository` 객체 생성하고, 그 참조값을 `memberServiceImpl`을 생성하면서, 생성자로 전달한다.
 - 클라이언트인 `memberServiceImpl` 입장에서 보면 `의존관계를 외부에서 주입해주는 모양새`이므로, **DI(Dependency Injection)** 우리말로 **의존관계 주입**이라고 한다.
+
+
 
 #### OrderServiceImpl - 생성자 주입
 
