@@ -50,21 +50,13 @@
 
 ​    1역할에 대한 구현체 2개가 모두 스프링빈으로 등록되어 있을때 해결방법	
 
-​	![](https://mail.naver.com/read/image/?mailSN=16376&attachIndex=2&contentType=image/png&offset=1408&size=176558&mimeSN=1628212498.346723.63141.30464&org=1&u=bomvll)
-
-![image](img src="https://mail.naver.com/read/image/?mailSN=16376&attachIndex=2&contentType=image/png&offset=1408&size=176558&maxSize=200&mimeSN=1628212498.346723.63141.30464&u=bomvll")
-
-https://mail.naver.com/read/image/?mailSN=16376&attachIndex=2&contentType=image/png&offset=1408&size=176558&mimeSN=1628212498.346723.63141.30464&org=1&u=bomvll
-
-![1](https://mail.naver.com/read/image/?mailSN=16378&attachIndex=2&contentType=image/jpeg&offset=1456&size=302174&maxSize=200&mimeSN=1628213630.723617.18737.34560&u=bomvll)
-
-https://mail.naver.com/read/image/?mailSN=16378&attachIndex=2&contentType=image/jpeg&offset=1456&size=302174&mimeSN=1628213630.723617.18737.34560&org=1&u=bomvll
+--
 
 ```
-<img src="https://mail.naver.com/read/image/?mailSN=16378&attachIndex=2&contentType=image/jpeg&offset=1456&size=302174&mimeSN=1628213630.723617.18737.34560&org=1&u=bomvll">
+<img src="C:\Users\이보미\Documents\카카오톡 받은 파일\ohgu">
 ```
 
-
+--
 
 6. 자동, 수동 올바른 실무 운영 기준
    - 자동 : 컴포넌트스캔
