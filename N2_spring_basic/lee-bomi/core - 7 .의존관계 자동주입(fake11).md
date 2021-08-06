@@ -64,7 +64,7 @@
 <img src="https://user-images.githubusercontent.com/68681443/128444870-0afc0cb8-b741-4df6-8386-b3193f24ceeb.png" width="30%">
 ```
 
-![그림2](https://user-images.githubusercontent.com/68681443/128444870-0afc0cb8-b741-4df6-8386-b3193f24ceeb.png)
+![image-20210805144158714](https://user-images.githubusercontent.com/68681443/128445749-ce8f294d-a429-4f35-98fa-bc1278e30fd5.png)
 
 --
 
