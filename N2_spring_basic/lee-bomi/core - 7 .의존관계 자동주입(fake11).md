@@ -56,7 +56,7 @@
 <img src="C:\Users\이보미\Documents\카카오톡 받은 파일\ohgu">
 ```
 
---
+![](https://mail.naver.com/read/image/?mailSN=16378&attachIndex=2&contentType=image/jpeg&offset=1456&size=302174&maxSize=200&mimeSN=1628213630.723617.18737.34560&u=bomvll)
 
 6. 자동, 수동 올바른 실무 운영 기준
    - 자동 : 컴포넌트스캔
