@@ -68,7 +68,7 @@
 
 --
 
-1aAHE1QSDl4eLQhwuEA2EuDN6heAMnnpS
+![image-20210805144158714](https://user-images.githubusercontent.com/68681443/128445749-ce8f294d-a429-4f35-98fa-bc1278e30fd5.png)
 
 6. 자동, 수동 올바른 실무 운영 기준
    - 자동 : 컴포넌트스캔
