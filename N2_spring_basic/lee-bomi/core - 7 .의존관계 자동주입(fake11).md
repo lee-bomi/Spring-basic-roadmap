@@ -8,7 +8,7 @@
    - @Nullable
    - Optional.empty
 
-   ![image-20210805144158714](C:\Users\이보미\AppData\Roaming\Typora\typora-user-images\image-20210805144158714.png)
+   ![image-20210805144158714](C:\Users\이보미\AppData\Roaming\Typora\typora-user-images\128446057-dd4cd84d-9a12-4297-895e-c6d20ca88005.png)
 
 3. 생성자주입을 선택하라!
 
@@ -30,9 +30,9 @@
 
    : 의존관계주입을 자동으로 해줄때 써줘야하는 코드(생성자, 주입받은 코드)가 많다. 이걸 대신써준다
 
-   | ![image-20210805152438346](C:\Users\이보미\AppData\Roaming\Typora\typora-user-images\image-20210805152438346.png) |
+   | ![image-20210805152438346](https://user-images.githubusercontent.com/68681443/128446155-d035a65f-3ad3-4c5e-98b2-039ea8b77210.png) |
    | :----------------------------------------------------------- |
-   | ![image-20210805152410305](C:\Users\이보미\AppData\Roaming\Typora\typora-user-images\image-20210805152410305.png) |
+   | ![image-20210805152410305](https://user-images.githubusercontent.com/68681443/128446201-34f42657-5690-4a1d-a9db-1458f6efd79c.png) |
 
    👉 롬복이 자바의 annotaion processor라는 기능을 사용해서 컴파일시점에 생성자코드를 자동으로 만들어준다.
 
@@ -45,30 +45,8 @@
 5. 조회빈이 2개이상 일때
 
    : ❌ NoUniqueBeanDefinitionException 오류 발생
-
-![image-20210805161140657](C:\Users\이보미\AppData\Roaming\Typora\typora-user-images\image-20210805161140657.png)
-
-​    1역할에 대한 구현체 2개가 모두 스프링빈으로 등록되어 있을때 해결방법	
-
---
-
-```
-<img src="C:\Users\이보미\Documents\카카오톡 받은 파일\ohgu">
-```
-
---
-
-![](1aAHE1QSDl4eLQhwuEA2EuDN6heAMnnpS)
-
-```
-<img src="https://user-images.githubusercontent.com/68681443/128444870-0afc0cb8-b741-4df6-8386-b3193f24ceeb.png" width="30%">
-```
-
-![image-20210805144158714](https://user-images.githubusercontent.com/68681443/128445749-ce8f294d-a429-4f35-98fa-bc1278e30fd5.png)
-
---
-
-![image-20210805144158714](https://user-images.githubusercontent.com/68681443/128445749-ce8f294d-a429-4f35-98fa-bc1278e30fd5.png)
+   
+   ![image-20210805161140657](https://user-images.githubusercontent.com/68681443/128446217-ce130337-99fe-414b-af3b-c52cb47d27f8.png)
 
 6. 자동, 수동 올바른 실무 운영 기준
    - 자동 : 컴포넌트스캔
