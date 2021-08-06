@@ -60,6 +60,12 @@
 
 ![](1aAHE1QSDl4eLQhwuEA2EuDN6heAMnnpS)
 
+```
+<img src="https://user-images.githubusercontent.com/68681443/128444870-0afc0cb8-b741-4df6-8386-b3193f24ceeb.png" width="30%">
+```
+
+![그림2](https://user-images.githubusercontent.com/68681443/128444870-0afc0cb8-b741-4df6-8386-b3193f24ceeb.png)
+
 --
 
 1aAHE1QSDl4eLQhwuEA2EuDN6heAMnnpS
