@@ -8,8 +8,8 @@
 
       : 서블릿은 개발자가 HTTP요청 메시지를 편하게 사용하도록 해당메시지를 파싱하고, 
 
-        HttpServletRequest객체에 담아서 제공한다
-   
+        HttpServletRequest객체에 담아서 제공한다(임시저장소기능 -> http요청이 시작-끝까지)
+
      - 저장 : request.setAttribute(name, value)
      - 조회 : request.getAttribute(name)
      - 세션관리 : request.getSesstion(create: true)
@@ -35,8 +35,6 @@
    - **Post-메시지바디에 쿼리파라미터 형식으로 전달**   ex) 회원가입, 상품주문, HTML form
 
      - Content-Type에 form으로 전달, **쿼리파라미터형식**으로 전달되었다는 정보 확인가능
-
-       
 
        ![image](https://user-images.githubusercontent.com/68681443/129649169-8989b58e-de18-4778-b41f-95aa24d7c7c8.png)
 
