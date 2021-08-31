@@ -55,7 +55,7 @@
 
 3. ### V2 - view분리
 
-   - view를 띄우기위한 중복코드를 제거하기 위한 객체를 만든다(MyView)
+   - view를 띄우기위해 중복코드를 제거하기 위한 객체를 만든다(MyView)
 
    ![image](https://user-images.githubusercontent.com/68681443/130887446-58d9bdb9-6cc0-42e0-9b6f-3fd7567a0a5f.png)
 
@@ -220,3 +220,5 @@
      
 
 7. ### V6 - 유연한컨트롤러2
+
+8. 
