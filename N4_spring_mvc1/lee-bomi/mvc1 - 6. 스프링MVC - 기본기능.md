@@ -146,7 +146,7 @@
    }
    ```
 
-   - @RequestHeader **MultiValueMap<String, String>** headerMap : 모든 http헤더를 조회(하나의키게 여러값받음)
+   - @RequestHeader **MultiValueMap<String, String>** headerMap : 모든 http헤더를 조회(하나의키에 여러값받음)
 
    - @RequestHeader("host") String host : 특정 http헤더 조회
 
@@ -301,7 +301,7 @@
 
 7. HTTP요청 파라미터 - @ModelAttribute
 
-   - 실제 개발에서 요청파라미터를 받아서 필요한 객체를 만들고, 그 객체에 값을 넣어주어야한다
+   - 실제 개발에서는 요청파라미터를 받아서 필요한 객체를 만들고, 그 객체에 값을 넣어주어야한다
 
      ```java
      @ResponseBody
@@ -339,7 +339,11 @@
      | ------------------------------------------------------------ |
      | : 객체안에 getUsername, setUsername이 있다면 이 객체는 username이라는 프로퍼티를 갖고있다고 말함 |
 
-     ​	
+     
+     
+     🔰지금까지 get, post, html form 으로 전송되는 값을 받는방법을 알아봄🔰
+     
+     
 
 8. HTTP요청 메시지 -  단순텍스트
 
@@ -386,11 +390,11 @@
 
    ✨ 요청파라미터(쿼리스트링, html form데이터로 전달되는 데이터)를 컨트롤러에서 받을때
 
-   ​		=> @RequestParam, @ModelAttribute
+   ​		=> @RequestParam(primitive type), @ModelAttribute(객체타입)
 
    ✨ 메시지 바디를 직접조회 및 응답
 
-   ​		=> @HttpEntity / **@RequestBody**
+   ​		=> @HttpEntity / **@RequestBody**(단순텍스트)
 
    
 
@@ -425,7 +429,7 @@
      
          //inputStream쓰기싫다!
          @ResponseBody
-         @PostMapping("/request-body-json-v2")   //HTTP header-ContentType이 jason인지 확인
+         @PostMapping("/request-body-json-v2")   //"HTTP header-ContentType이 jason인지 확인"
          public String requestBodyJsonV2(@RequestBody String messageBody) throws IOException {
      
              log.info("messageBody={}", messageBody);
@@ -436,13 +440,13 @@
          }
      
          //objectMapper쓰기싫다!(json을 문자로 변환하고, 다시 json으로 변환하기싫다)
-         //@RequestBody에 직접만든 객체 지정가능!!
+         //@RequestBody에 직접만든 객체 지정가능!!---------------------------------------------------
          @ResponseBody
          @PostMapping("/request-body-json-v3")  
          public String requestBodyJsonV3(@RequestBody HelloData data) throws IOException {
              log.info("username={}, age={}", data.getUsername(), data.getAge());
              return "ok";
-         }
+         }//---------------------------------------------------------------------------------------
      
          //이렇게 써도 상관없음!
          @ResponseBody
