@@ -12,5 +12,60 @@
 
 4. 2,3번에 대한 테스트진행
 
-   
+5. HTML
+
+6. ModelAttribute
+
+   - 파라미터로 primitive타입이 오면 @RequestParam이 적용되고,
+
+   - 객체타입이 오면 @ModelAttribute가 적용된다(둘다 생략가능!)
+
+     ![image](https://user-images.githubusercontent.com/68681443/132271807-d2029107-18bc-44fd-ade6-102ae4a80990.png)
+
+     ```java
+     //    @PostMapping("/add")
+         public String addItemV1(
+                 @RequestParam String itemName,
+                 @RequestParam int price,
+                 @RequestParam Integer quantity,
+                 Model model) {
+     
+             Item item = new Item();
+             item.setItemName(itemName);
+             item.setPrice(price);
+             item.setQuantity(quantity);
+             itemRepository.save(item);
+             model.addAttribute("item", item);
+     
+             return "basic/item";
+         }
+     
+     //    @PostMapping("/add")    //@ModelAttribute에는 view에서 뿌려질 단어로 쓴다
+         public String addItemV2(@ModelAttribute("item") Item item, Model model) {
+     //        Item item = new Item();
+     //        item.setItemName(itemName);
+     //        item.setPrice(price);
+     //        item.setQuantity(quantity);
+             itemRepository.save(item);
+     //        model.addAttribute("item", item); 자동추가, 생략가능
+             return "basic/item";
+         }
+     
+     //    @PostMapping("/add")    //가져오는 변수명 생략가능(클래스명 가져옴)
+         public String addItemV3(@ModelAttribute Item item) {
+             itemRepository.save(item);
+             return "basic/item";
+         }
+     
+         @PostMapping("/add")    //아예 @ModelAttribute도 생략가능
+                                    //대상객체가 자동으로 모델에 등록된다
+         public String addItemV4(Item item) {
+             itemRepository.save(item);
+             return "basic/item";
+         }
+     ```
+
+     
+
+7. dd
 
