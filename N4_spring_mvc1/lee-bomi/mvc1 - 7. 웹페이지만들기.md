@@ -67,5 +67,51 @@
 
      
 
-7. dd
+7. PRG Post/Redirect/Get
+
+   - redirect하면 get/items/{id}로 다시 서버에 요청함
+
+   - 새로고침해도 다시 화면출력요청을 할 뿐이니 데이터에 변화가 있지않음
+
+     ![image](https://user-images.githubusercontent.com/68681443/132298472-6c50197f-f62e-4682-9fbc-b61b3bb100e9.png)
+
+   - 코드는 아래와 같이 사용할 수 있다
+
+     ```java
+     @PostMapping("/add")
+         public String addItemV5(Item item) {
+             itemRepository.save(item);
+             return "redirect:/basic/items/" + item.getId();
+         }
+     
+     @PostMapping("/{itemId}/edit")
+         public String edit(@PathVariable Long itemId, @ModelAttribute Item item){
+             itemRepository.update(itemId, item);
+             return "redirect:/basic/items/{itemId}";    
+             								//PathVariable에 들어오는 값을 redirect에서도 쓸수있다
+         }
+     ```
+
+     
+
+8. RedirectAttributes
+
+   - redirectAttributes에도 addAttribute가능! 
+   - return에 들어가는 변수와 다른 status같은것들은 ?status=true 식으로 뒤에 쿼리파라미터로 붙는다
+
+   ```java
+   @PostMapping("/add")
+       public String addItemV6(Item item, RedirectAttributes redirectAttributes) {
+           Item savedItem = itemRepository.save(item);
+           redirectAttributes.addAttribute("itemId", savedItem.getId());
+           redirectAttributes.addAttribute("status", true);
+           return "redirect:/basic/items/{itemId}";
+       }
+   ```
+
+   ```html
+   <h2 th:if="${param.status}" th:text="'저장 완료'"></h2>
+   ```
+
+   - redirectAttributes.addAttribute로 파라미터 추가시, param.status로 받을 수 있다
 
