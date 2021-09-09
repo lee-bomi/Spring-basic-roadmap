@@ -323,7 +323,7 @@
      ```java
      @ResponseBody
      @RequestMapping("/model-attribute-v2")
-     public String modelAttributeV2(@ModelAttribute HelloData helloData) {//HelloData객체 생성, 															       요청파라미터가 모두들어가있음
+     public String modelAttributeV2(@ModelAttribute HelloData helloData) {//HelloData객체 생성,요청파라미터가 모두들어가있음
          log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
          log.info("helloDate={}", helloData);
          return "ok";
@@ -372,7 +372,7 @@
        @PostMapping("/request-body-string-v3")
        public HttpEntity<String> RequestBodyStringV3 (HttpEntity<String> httpEntity) throws IOException {
            //Http메세지컨버터동작 = HttpEntity가 Httpbody에 있는걸 String으로 바꿔서 넣어줄께!
-           //String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8); 이코																				드 자동동작
+           //String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8); 이코드 자동동작
            String body = httpEntity.getBody();
            log.info("messageBody={}", body);
            return new HttpEntity<>("ok");
@@ -549,6 +549,6 @@
 
 12. HTTP메시지 컨버터
 
-13. 요청 매핑 핸들러 어뎁터쿠조
+13. 요청 매핑 핸들러 어뎁터구조
 
     
